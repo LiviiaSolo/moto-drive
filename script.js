@@ -73,7 +73,7 @@ const bikes = [
     engine: "649cc",
     year: "2021",
     type: "Sport",
-    img: "images/kawasaki-ninja-650.png"
+    img: "images/Kawasaki-Ninja-650.png"
   },
   {
     id: 5,
