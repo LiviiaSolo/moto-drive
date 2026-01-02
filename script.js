@@ -58,7 +58,7 @@ const bikes = [
   {
     id: 3,
     brand: "Ducati",
-    name: "Multistrada V4 (2025)",
+    name: "Multistrada V4",
     price: 25390,
     engine: "1158cc",
     year: "2025",
@@ -114,7 +114,7 @@ const bikes = [
     year: "2023",
     type: "Adventure",
     img: "images/BMW-R1250GS.png"
-  }, 
+  },
   {
     id: 9,
     brand: "Kawasaki",
@@ -124,15 +124,17 @@ const bikes = [
     year: "2024",
     type: "Sport",
     img: "images/Kawasaki-Ninja.png"
-  }  
+  }
 ];
 
 // State
 let showAll = false;
 const FEATURED_COUNT = 6;
-let cart = [];
 
-// Elemnts
+// cart with localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Elements
 const bikeContainer = document.querySelector(".bikes");
 const brandFilter = document.getElementById("brandFilter");
 const cartCount = document.getElementById("cartCount");
@@ -143,7 +145,12 @@ const cartBtn = document.getElementById("cartBtn");
 const showAllBtn = document.getElementById("showAllBtn");
 const showFeaturedBtn = document.getElementById("showFeaturedBtn");
 
-// Bikes rendering
+// Helpers
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Bikes
 function renderBikes(filter = "all") {
   if (!bikeContainer) return;
 
@@ -184,16 +191,19 @@ function addToCart(id) {
   if (!bike) return;
 
   cart.push(bike);
+  saveCart();
   renderCart();
 }
 
 function removeFromCart(index) {
   cart.splice(index, 1);
+  saveCart();
   renderCart();
 }
 
 function clearCart() {
   cart = [];
+  saveCart();
   renderCart();
 }
 
@@ -203,30 +213,24 @@ function renderCart() {
   cartItems.innerHTML = "";
 
   cart.forEach((item, index) => {
-    const li = document.createElement("li");
-
-    const name = document.createElement("span");
-    name.textContent = `${item.brand} ${item.name}`;
-
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "✕";
-    removeBtn.onclick = () => removeFromCart(index);
-
-    li.appendChild(name);
-    li.appendChild(removeBtn);
-    cartItems.appendChild(li);
+    cartItems.innerHTML += `
+      <li>
+        ${item.brand} ${item.name}
+        <button onclick="removeFromCart(${index})">✕</button>
+      </li>
+    `;
   });
 
   if (cartCount) cartCount.textContent = cart.length;
 }
 
 // Cart UI
-if (cartBtn && cartBox) {
-  cartBtn.onclick = () => cartBox.classList.add("open");
-}
+cartBtn && cartBtn.addEventListener("click", () => {
+  cartBox.classList.add("open");
+});
 
 function closeCart() {
-  if (cartBox) cartBox.classList.remove("open");
+  cartBox && cartBox.classList.remove("open");
 }
 
 // Featured / all
@@ -240,44 +244,57 @@ function updateToggleButtons() {
   }
 }
 
-showAllBtn && (showAllBtn.onclick = () => {
+showAllBtn && showAllBtn.addEventListener("click", () => {
   showAll = true;
   renderBikes(brandFilter?.value || "all");
 });
 
-showFeaturedBtn && (showFeaturedBtn.onclick = () => {
+showFeaturedBtn && showFeaturedBtn.addEventListener("click", () => {
   showAll = false;
   renderBikes("all");
 });
 
 // Filter
-brandFilter && (brandFilter.onchange = e => {
+brandFilter && brandFilter.addEventListener("change", e => {
   renderBikes(e.target.value);
 });
 
-// Bike Page
+// Bike page
 const params = new URLSearchParams(window.location.search);
-const bikeId = parseInt(params.get("id"));
+const bikeId = Number(params.get("id"));
 
 if (bikeId) {
   const bike = bikes.find(b => b.id === bikeId);
 
   if (bike) {
-  const img = document.getElementById("bikeImage");
-  const name = document.getElementById("bikeName");
-  const price = document.getElementById("bikePrice");
-  const engine = document.getElementById("bikeEngine");
+    document.getElementById("bikeImage")?.setAttribute("src", bike.img);
+    document.getElementById("bikeName").textContent = bike.name;
+    document.getElementById("bikeBrand").textContent = bike.brand;
+    document.getElementById("bikePrice").textContent = "€" + bike.price;
+    document.getElementById("bikeEngine").textContent = bike.engine;
+    document.getElementById("bikeYear").textContent = bike.year;
+    document.getElementById("bikeType").textContent = bike.type;
+  }
 
-  if (img) img.src = bike.img;
-  if (name) name.textContent = bike.brand + " " + bike.name;
-  if (price) price.textContent = "€" + bike.price;
-  if (engine) engine.textContent = bike.engine;
-}
+  const addBtn = document.getElementById("addBtn");
+
+  addBtn && addBtn.addEventListener("click", () => {
+  addToCart(bikeId);
+
+  // update counter
+  if (cartCount) {
+    cartCount.textContent = cart.length;
+  }
+
+  addBtn.textContent = "Added ✓";
+  addBtn.disabled = true;
+});
+
 }
 
 // Init 
 renderBikes();
-
+renderCart();
 
 
 // Back button functionality
