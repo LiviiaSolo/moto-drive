@@ -1,0 +1,151 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MotoDrive | Premium Motorcycles</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+   <div class="header-logo">
+    <a href="/" class="logo">MotoDrive</a>
+   </div>
+
+    <div class="burger" id="burger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+
+    <nav class="nav" id="navMenu">
+      <a href="#home" data-lang="navHome">Home</a>
+      <a href="#bikes" data-lang="navBikes">Bikes</a>
+      <a href="#about" data-lang="navAbout">About</a>
+      <a href="#contact" data-lang="navContact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <select class="language" id="languageSwitcher">
+        <option class="lang-" value="en">EN</option>
+        <option value="sk">SK</option>
+      </select>
+
+      <button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1 data-lang="heroTitle">Premium Motorcycles for Sale</h1>
+    <p data-lang="heroSubtitle">Power. Freedom. Performance.</p>
+    <a href="#bikes" class="btn-home">View details</a>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="controls">
+    <select id="brandFilter" class="select-ui">
+      <option value="all">All brands</option>
+      <option value="Yamaha">Yamaha</option>
+      <option value="Kawasaki">Kawasaki</option>
+      <option value="BMW">BMW</option>
+      <option value="Ducati">Ducati</option>
+      <option value="Honda">Honda</option>
+      <option value="Aprilia">Aprilia</option>
+    </select>
+  </section>
+
+
+  <!-- Bikes Section -->
+  <section id="bikes" class="bikes"></section>
+  
+    <div class="show-controls">
+    <button id="showAllBtn" class="btn">View all motorcycles</button>
+    <button id="showFeaturedBtn" class="btn" style="display:none;">
+      Back to featured
+    </button>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 data-lang="aboutTitle">Why MotoDrive?</h2>
+  
+    <p class="about-intro" data-lang="aboutText">
+      MotoDrive is a premium motorcycle dealership focused on quality,
+      performance, and trust. We work only with verified brands and
+      carefully selected models.
+    </p>
+
+    <div class="about-showroom-grid">
+      <div class="showroom-item">
+        <img src="./images/showroom1.jpg" alt="Наш шоурум 1">
+      </div>
+      <div class="showroom-item">
+        <img src="./images/showroom2.jpg" alt="Наш шоурум 2">
+      </div>
+    </div>
+  
+    <div class="about-features">
+      <div class="feature">
+        <h3>Premium Selection</h3>
+        <p>Only top-brand motorcycles with full service history.</p>
+      </div>
+  
+      <div class="feature">
+        <h3>Quality Control</h3>
+        <p>Every bike is inspected before listing.</p>
+      </div>
+  
+      <div class="feature">
+        <h3>Transparent Deals</h3>
+        <p>No hidden fees. Clear pricing and honest communication.</p>
+      </div>
+  
+      <div class="feature">
+        <h3>Customer First</h3>
+        <p>Personal support before and after purchase.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 data-lang="contactTitle">Contact Us</h2>
+
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Your message"></textarea>
+      <button class="contact-btn" type="submit" data-lang="contactBtn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 MotoDrive</p>
+    <p data-lang="footerText">Premium motorcycle dealership</p>
+  </footer>
+
+<!-- Cart Section -->
+<div class="cart" id="cart">
+  <div class="cart-header">
+    <h3 data-lang="cartTitle">Shopping Cart</h3>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+
+  <ul id="cartItems"></ul>
+
+  <button class="clear-cart" onclick="clearCart()">
+    Clear cart
+  </button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
