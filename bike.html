@@ -10,67 +10,69 @@
 </head>
 
 <body>
-	<!-- Header -->
-	<header class="header">
-		<div class="header-logo">
-			<a href="/" class="logo">MotoDrive</a>
-		</div>
-	
-		<div class="burger" id="burger">
-			<span class="line"></span>
-			<span class="line"></span>
-			<span class="line"></span>
-		</div>
-	
-		<nav class="nav" id="navMenu">
-			<a href="#home" data-lang="navHome">Home</a>
-			<a href="#bikes" data-lang="navBikes">Bikes</a>
-			<a href="#about" data-lang="navAbout">About</a>
-			<a href="#contact" data-lang="navContact">Contact</a>
-		</nav>
-	
-		<div class="header-actions">
-			<select class="language" id="languageSwitcher">
-				<option class="lang-" value="en">EN</option>
-				<option value="sk">SK</option>
-			</select>
-	
-			<button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
-		</div>
-	</header>
-
-		<div class="cart" id="cart">
-			<div class="cart-header">
-				<h3>Your cart</h3>
-				<button class="close-cart" onclick="closeCart()">✕</button>
+		<!-- Header -->
+		<header class="header">
+			<div class="header-logo">
+				<a href="/" class="logo">MotoDrive</a>
 			</div>
 		
-			<ul id="cartItems"></ul>
+			<div class="burger" id="burger">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</div>
 		
-			<button class="btn" onclick="clearCart()">Clear cart</button>
-		<a href="index.html#bikes" class="btn back-btn">
-			← Back to motorcycles
-		</a>
+			<nav class="nav" id="navMenu">
+				<a href="#home" data-lang="navHome">Home</a>
+				<a href="#bikes" data-lang="navBikes">Bikes</a>
+				<a href="#about" data-lang="navAbout">About</a>
+				<a href="#contact" data-lang="navContact">Contact</a>
+			</nav>
+		
+			<div class="header-actions">
+				<select class="language" id="languageSwitcher">
+					<option class="lang-" value="en">EN</option>
+					<option value="sk">SK</option>
+				</select>
+		
+				<button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+			</div>
+		</header>
+
+			<div class="cart" id="cart">
+				<div class="cart-header">
+					<h3>Your cart</h3>
+					<button class="close-cart" onclick="closeCart()">✕</button>
+				</div>
+			
+				<ul id="cartItems"></ul>
+			
+				<button class="btn" onclick="clearCart()">Clear cart</button>
+			</div>
+
+			<a href="index.html#bikes" class="btn back-btn">
+				← Back to motorcycles
+			</a>
 
     <section class="bike-page">
-			<div class="bike-gallery">
-				<img id="bikeImage">
-			</div>
+        <div class="bike-gallery">
+            <img id="bikeImage">
+        </div>
 
-			<div class="bike-info">
-				<h1 id="bikeName"></h1>
-				<p id="bikeBrand"></p>
+        <div class="bike-info">
+            <h1 id="bikeName"></h1>
+            <p id="bikeBrand"></p>
 
-				<div class="price" id="bikePrice"></div>
+            <div class="price" id="bikePrice"></div>
 
-				<ul class="specs">
-					<li><strong>Engine:</strong> <span id="bikeEngine"></span></li>
-					<li><strong>Year:</strong> <span id="bikeYear"></span></li>
-					<li><strong>Type:</strong> <span id="bikeType"></span></li>
-				</ul>
+            <ul class="specs">
+                <li><strong>Engine:</strong> <span id="bikeEngine"></span></li>
+                <li><strong>Year:</strong> <span id="bikeYear"></span></li>
+                <li><strong>Type:</strong> <span id="bikeType"></span></li>
+            </ul>
 
-				<button class="btn" id="addBtn">Add to cart</button>
-			</div>
+            <button class="btn" id="addBtn">Add to cart</button>
+        </div>
 		</section>
     <script src="script.js"></script>
 </body>
