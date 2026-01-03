@@ -25,7 +25,7 @@ img {
 }
 
 body {
-	background: #0e0e0e;
+	background: #1c1c1c;
 	color: white;
 }
 
@@ -40,9 +40,7 @@ body {
 	justify-content: space-between;
 	align-items: baseline;
 	padding: 20px 50px;
-	background: rgba(0, 0, 0, 0.9);
-	backdrop-filter: blur(6px);
-	
+	background: rgba(0, 0, 0, 0.7);
 }
 
 .header-logo {
@@ -92,7 +90,6 @@ body {
 
 .language {
 	background: transparent;
-	color: #fff;
 	color: #f3055c;
 	border: 1px solid #fff;
 	border-radius: 10px;
@@ -107,25 +104,6 @@ body {
 
 .language:hover {
 	background: #99033a;
-	background: linear-gradient(90deg, #25000e, #ff004c);
-	color: #fff;
-	border: 1px solid #fff;
-}
-
-.btn-home {
-	background: transparent;
-	color: #c10046;
-	border: 1px solid #fff;
-	border-radius: 10px;
-	padding: 12px 53px;
-	font-weight: 600;
-	font-size: 20px;
-	text-decoration: none;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-.btn-home:hover {
 	background: linear-gradient(90deg, #25000e, #ff004c);
 	color: #fff;
 	border: 1px solid #fff;
@@ -146,7 +124,6 @@ a.btn {
 
 .btn:hover,
 a.btn:hover {
-	background: #99033a;
 	background: linear-gradient(90deg, #25000e, #ff004c);
 	color: #fff;
 	border: 1px solid #fff;
@@ -286,10 +263,11 @@ a.btn:hover {
 
 /* Hero Section */
 .hero {
-	min-height: 95vh;
+	min-height: 90dvh;
 	background:
-	linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-	url("./images/motorcycle.jpg") center / cover;
+	linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+	url("./images/motorcycle8.jpg") top / cover;
+	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -303,7 +281,8 @@ a.btn:hover {
 
 .hero p {
 	margin: 15px 0 30px;
-	font-size: 18px;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 
 .btn {
@@ -314,7 +293,25 @@ a.btn:hover {
 	text-decoration: none;
 	font-weight: bold;
 }
+.btn-home {
+	background: transparent;
+	color: #c10046;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 12px 53px;
+	font-weight: 700;
+	font-size: 20px;
+	margin-top: 50px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
 
+.btn-home:hover {
+	background: linear-gradient(90deg, #25000e, #ff004c);
+	color: #fff;
+	border: 1px solid #fff;
+}
 .btn:hover {
 	border: 1px solid #fff;
 	transform: translateY(-2px);
@@ -332,7 +329,6 @@ a.btn:hover {
 }
 
 .cartBtn {
-	color: #fff;
 	color: #99033a;
 	font-weight: 700;
 	font-size: 16px;
@@ -392,7 +388,6 @@ a.btn:hover {
 
 .select-ui:hover,
 .select-ui:focus {
-	background: #99033a;
 	background: linear-gradient(90deg, #25000e, #ff004c);
 	color: #18010a;
 	outline: none;
@@ -681,7 +676,6 @@ a.btn:hover {
 
 .contact input::placeholder,
 .contact textarea::placeholder {
-	color: rgba(153, 3, 58, 0.6);
 	color: rgba(255, 255, 255, 0.6);
 }
 
@@ -711,7 +705,7 @@ a.btn:hover {
 /* Footer */
 .footer {
 	padding: 30px;
-	background: black;
+	background: #151515;
 	text-align: center;
 	font-size: 14px;
 	opacity: 0.8;
@@ -720,7 +714,7 @@ a.btn:hover {
 /* Cart Section */
 .cart {
 	position: fixed;
-	top: 80px;
+	top: 78px;
 	right: -400px;
 	width: 350px;
 	height: calc(100vh - 80px);
@@ -880,11 +874,9 @@ a.btn:hover {
 	}
 
 	.btn {
-		/* width: 100%; */
 		padding: 6px 12px;
 	}
 }
-
 
 /* Animation Styles */
 /* Bike card animation */
