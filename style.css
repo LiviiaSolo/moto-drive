@@ -280,9 +280,8 @@ a.btn:hover {
 }
 
 .hero p {
-	margin: 15px 0 30px;
+	margin: 15px 0 -20px;
 	font-size: 20px;
-	margin-bottom: 10px;
 }
 
 .btn {
