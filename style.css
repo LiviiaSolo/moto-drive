@@ -294,7 +294,7 @@ a.btn:hover {
 .btn-home {
 	background: transparent;
 	color: #ff004c;
-	border: 2px solid #fff;
+	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 12px 53px;
 	font-weight: 700;
