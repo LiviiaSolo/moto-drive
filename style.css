@@ -103,7 +103,7 @@ body {
 }
 
 .language:hover {
-	background: #99033a;
+	color: #ff004c;
 	background: linear-gradient(90deg, #25000e, #ff004c);
 	color: #fff;
 	border: 1px solid #fff;
@@ -112,7 +112,7 @@ body {
 .btn,
 a.btn {
 	background: transparent;
-	color: #c10046;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 8px 16px;
@@ -126,16 +126,15 @@ a.btn {
 a.btn:hover {
 	background: linear-gradient(90deg, #25000e, #ff004c);
 	color: #fff;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
 }
 
 .cart-btn {
 	background: transparent;
 	border: none;
-	color: #fff;
 	font-size: 18px;
 	cursor: pointer;
-	color: #c10046;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 4px 10px;
@@ -280,13 +279,12 @@ a.btn:hover {
 }
 
 .hero p {
-	margin: 15px 0 30px;
+	margin: 15px 0 -20px;
 	font-size: 20px;
-	margin-bottom: 10px;
 }
 
 .btn {
-	color: #99033a;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 10px 20px;
@@ -295,12 +293,12 @@ a.btn:hover {
 }
 .btn-home {
 	background: transparent;
-	color: #c10046;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 12px 53px;
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 22px;
 	margin-top: 50px;
 	text-decoration: none;
 	cursor: pointer;
@@ -329,7 +327,7 @@ a.btn:hover {
 }
 
 .cartBtn {
-	color: #99033a;
+	color: #ff004c;
 	font-weight: 700;
 	font-size: 16px;
 	cursor: pointer;
@@ -374,7 +372,7 @@ a.btn:hover {
 /* Filter Section */
 .select-ui {
 	background: transparent;
-	color: #99033a;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 10px 53px;
@@ -459,7 +457,7 @@ a.btn:hover {
 }
 
 .bike span {
-	color: #99033a;
+	color: #ff004c;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -563,7 +561,7 @@ a.btn:hover {
 .feature h3 {
 	margin-bottom: 20px;
 	font-size: 18px;
-	color: #99033a;
+	color: #ff004c;
 }
 
 .feature p {
@@ -571,6 +569,7 @@ a.btn:hover {
 	font-size: 15px;
 	opacity: 0.85;
 }
+
 .about-showroom-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -668,7 +667,7 @@ a.btn:hover {
 	border-radius: 12px;
 	background: transparent;
 	border: 1px solid #fff;
-	color: #99033a;
+	color: #ff004c;
 	font-size: 15px;
 	outline: none;
 	transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -681,13 +680,14 @@ a.btn:hover {
 
 .contact input:focus,
 .contact textarea:focus {
-	border-color: #99033a;
+	border-color: #ff004c;
+	color: #ff004c;
 	box-shadow: 0 0 0 2px rgba(153, 3, 58, 0.25);
 }
 
 .contact-btn {
 	background: transparent;
-	color: #c10046;
+	color: #ff004c;
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 12px 53px;
@@ -755,7 +755,7 @@ a.btn:hover {
 	margin-top: 20px;
 	width: 100%;
 	padding: 10px;
-	color: #99033a;
+	color: #ff004c;
 	border: 1px solid #fff;
 	cursor: pointer;
 	border-radius: 6px;
@@ -773,7 +773,7 @@ a.btn:hover {
 .cart li button {
 	background: none;
 	border: none;
-	color: #99033a;
+	color: #ff004c;
 	cursor: pointer;
 	font-size: 16px;
 }
@@ -822,8 +822,7 @@ a.btn:hover {
 
 .price {
 	font-size: 28px;
-	color: #99033a;
-	
+	color: #ff004c;
 	margin: 20px 0;
 }
 
