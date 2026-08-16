@@ -1,25 +1,22 @@
+<!doctype html>
+<html lang="en"></html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MotoDrive — premium motorcycles for true riders. 
+  Explore top models and performance bikes.">
 
   <title>MotoDrive | Premium Motorcycles</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
-
 <body>
-
   <!-- Header -->
   <header class="header">
-   <div class="header-logo">
-    <a href="index.html" class="logo">MotoDrive</a>
-   </div>
-
-    <div class="burger" id="burger">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
+    <div class="header-logo">
+      <a href="index.html" class="logo">MotoDrive</a>
     </div>
 
     <nav class="nav" id="navMenu">
@@ -29,25 +26,39 @@
       <a href="#contact" data-lang="navContact">Contact</a>
     </nav>
 
-    <div class="header-actions">
-      <select class="language" id="languageSwitcher">
-        <option class="lang-" value="en">EN</option>
-        <option value="sk">SK</option>
-      </select>
+    <div class="header-right">
+      <div class="header-actions">
+        <button id="favoritesBtn" class="cart-btn">
+          ❤️ <span id="favCount">0</span>
+        </button>
+        <button class="cart-btn" id="cartBtn">
+          🛒 <span id="cartCount">0</span>
+        </button>
+      </div>
 
-      <button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+      <div class="burger" id="burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <h1 data-lang="heroTitle">Premium Motorcycles for Sale</h1>
-    <p data-lang="heroSubtitle">Power. Freedom. Performance.</p>
+    <p class="subtitle" data-lang="heroSubtitle">Power. Freedom. Performance.</p>
     <a href="#bikes" class="btn-home">View details</a>
   </section>
 
   <!-- Filter Section -->
   <section class="controls">
+
+    <div class="description">
+      <h2 class="title">Find Your Motorcycle</h2>
+      <p class="text">Filter by brand and explore top models</p>
+    </div>
+
     <select id="brandFilter" class="select-ui">
       <option value="all">All brands</option>
       <option value="Yamaha">Yamaha</option>
@@ -58,7 +69,6 @@
       <option value="Aprilia">Aprilia</option>
     </select>
   </section>
-
 
   <!-- Bikes Section -->
   <section id="bikes" class="bikes"></section>
@@ -72,20 +82,22 @@
 
   <!-- About Section -->
   <section id="about" class="about">
-    <h2 data-lang="aboutTitle">Why MotoDrive?</h2>
-  
-    <p class="about-intro" data-lang="aboutText">
-      MotoDrive is a premium motorcycle dealership focused on quality,
-      performance, and trust. We work only with verified brands and
-      carefully selected models.
-    </p>
+
+    <div class="description">
+      <h2 class="title" data-lang="aboutTitle">Why MotoDrive?</h2>  
+      <p class="text" data-lang="aboutText">
+        MotoDrive is a premium motorcycle dealership focused on quality,
+        performance, and trust. We work only with verified brands and
+        carefully selected models.
+      </p>
+    </div>
 
     <div class="about-showroom-grid">
       <div class="showroom-item">
-        <img src="./images/showroom1.jpg" alt="Наш шоурум 1">
+        <img src="./images/showroom1.jpg" alt="Our showroom 1">
       </div>
       <div class="showroom-item">
-        <img src="./images/showroom2.jpg" alt="Наш шоурум 2">
+        <img src="./images/showroom2.jpg" alt="Our showroom 2">
       </div>
     </div>
   
@@ -112,7 +124,6 @@
     </div>
   </section>
 
-
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2 data-lang="contactTitle">Contact Us</h2>
@@ -131,21 +142,82 @@
     <p data-lang="footerText">Premium motorcycle dealership</p>
   </footer>
 
-<!-- Cart Section -->
-<div class="cart" id="cart">
-  <div class="cart-header">
-    <h3 data-lang="cartTitle">Shopping Cart</h3>
-    <button class="close-cart" onclick="closeCart()">✕</button>
+  <!-- Cart Section (Cart sidebar) -->
+  <div class="cart" id="cart">
+    <div class="cart-header">
+      <h3>Your cart</h3>
+      <button class="close-cart" onclick="closeCart()">✕</button>
+    </div>
+
+    <ul id="cartItems"></ul>
+
+    <div class="cart-footer">
+      <div class="cart-total" style="margin-bottom: 12px; font-size: 1.1rem; display: flex; justify-content: space-between;">
+        <span>Total:</span>
+        <strong id="cartTotal">€0</strong>
+      </div>
+
+      <button class="btn checkout-btn" onclick="openCheckoutModal()" style="width: 100%; margin-bottom: 8px; background-color: var(--accent-primary, #e50914); color: white;">
+        Checkout
+      </button>
+
+      <button class="clear-cart" onclick="clearCart()" style="width: 100%; background: transparent; border: 1px solid #444; color: #888; padding: 8px; cursor: pointer;">
+        Clear cart
+      </button>
+    </div>
   </div>
 
-  <ul id="cartItems"></ul>
+  <!-- Checkout Modal (modal order window) -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content modal-checkout">
+      <button class="close-modal" onclick="closeCheckoutModal()">✕</button>
 
-  <button class="clear-cart" onclick="clearCart()">
-    Clear cart
-  </button>
-</div>
+      <h2>Order Checkout</h2>
+      
+      <div class="checkout-summary">
+        <p>Items in order: <strong id="checkoutItemsCount">0</strong></p>
+        <p>Total amount: <strong id="checkoutTotalPrice">€0</strong></p>
+      </div>
+
+      <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-group">
+          <label for="clientName">Full Name *</label>
+          <input type="text" id="clientName" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clientPhone">Phone Number *</label>
+          <input type="tel" id="clientPhone" placeholder="+421 900 000 000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clientEmail">Email *</label>
+          <input type="email" id="clientEmail" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="deliveryMethod">Delivery Method</label>
+          <select id="deliveryMethod">
+            <option value="showroom">Showroom Pickup (Banská Bystrica)</option>
+            <option value="delivery">Specialist Bike Delivery</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method</label>
+          <select id="paymentMethod">
+            <option value="cash">Pay at Showroom / On Delivery</option>
+            <option value="card">Card / Bank Transfer</option>
+            <option value="financing">Leasing / Financing Request</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Confirm & Place Order</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
-</body>
 
+</body>
 </html>

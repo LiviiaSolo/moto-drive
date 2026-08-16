@@ -1,0 +1,42 @@
+Moto‑Drive — Commercial License 
+Copyright © 2026 Liviia Solo
+
+This license grants the buyer the right to use the Moto‑Drive Website Template in personal and commercial projects.
+The buyer receives usage rights, but does not receive ownership of the product or rights to redistribute the source code.
+
+1. Allowed
+The buyer is permitted to:
+– use the template in personal or commercial projects
+– modify the code, styles, structure, and design
+– adapt the template for branding or client needs
+– use the template for client work
+– publish websites created with the template
+
+2. Not Allowed
+The buyer is not permitted to:
+– resell the template as a digital product
+– distribute the template for free or for payment
+– upload or publish the source code in public repositories
+– claim authorship of the template
+– use the template to create competing templates, UI kits, or digital products
+– include the template in any bundles, packages, or libraries intended for resale
+
+3. Ownership
+The Moto‑Drive template remains the intellectual property of the author — Liviia Solo.
+The buyer receives a license to use, not ownership of the product.
+
+4. Redistribution Prohibited
+Any redistribution, copying, sharing, or transferring of the template 
+to third parties is strictly prohibited.
+
+5. Liability
+The author is not responsible for:
+– incorrect use of the template
+– losses or damages related to integration
+– modifications made by the buyer
+
+6. Support
+Support may be provided at the author's discretion and is not guaranteed.
+
+7. Updates
+The buyer receives access to future updates of the template if they are released.
